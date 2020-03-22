@@ -16,21 +16,22 @@ namespace AerospikeDemo
             WritePolicy policy = new WritePolicy();
             policy.SetTimeout(50);  // 50 millisecond timeout
 
+            int size = 100000;
 
-            // Write single value.
-            Key key = new Key("test", "myset", "mykey");
-            Bin bin = new Bin("mybin", "myvalue");
-            client.Put(policy, key, bin);
+            Key[] keys = new Key[size];
 
-
-
-            Record record = client.Get(policy, key, "mybin");
-            if (record != null)
+            for (int i = 0; i < 1000; i++)
             {
-                Console.WriteLine("Got name: " + record.GetValue("mybin"));
+                keys[i] = new Key("test", "myset", (i + 1));
             }
+
+            Record[] records = client.Get(null, keys);
 
             client.Close();
         }
+
+
     }
+
+    
 }

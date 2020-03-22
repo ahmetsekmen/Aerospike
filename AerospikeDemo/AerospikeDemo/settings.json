@@ -1,0 +1,16 @@
+{
+  "Host": "172.28.128.3",
+  "Port": 3000,
+  "ClusterName": "",
+  "Namespace": "test",
+  "Set": "test",
+  "User": "",
+  "Password": "",
+  "TlsEnable": false,
+  "TlsName": "",
+  "TlsProtocols": "",
+  "TlsRevoke": "",
+  "TlsClientCertFile": "",
+  "TlsLoginOnly": false,
+  "AuthMode": "INTERNAL"
+}

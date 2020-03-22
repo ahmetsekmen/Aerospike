@@ -10,7 +10,11 @@ namespace AerospikeDemo
             //SingleRecord.Run();
             //MultiRecord.Run();
             //Delete.Run();
-            MultiRecordList.Run();
+            //MultiRecordList.Run();
+            //Add.Run();
+
+            //Append.RunAppend();
+            Append.RunPrepend();
         }
     }
 }
