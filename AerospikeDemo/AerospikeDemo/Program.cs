@@ -7,7 +7,8 @@ namespace AerospikeDemo
         static void Main(string[] args)
         {
             Console.WriteLine("Main!");
-            SingleRecord.Run();
+            //SingleRecord.Run();
+            MultiRecord.Run();
         }
     }
 }
