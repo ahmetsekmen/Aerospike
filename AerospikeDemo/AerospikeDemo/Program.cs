@@ -8,7 +8,9 @@ namespace AerospikeDemo
         {
             Console.WriteLine("Main!");
             //SingleRecord.Run();
-            MultiRecord.Run();
+            //MultiRecord.Run();
+            //Delete.Run();
+            MultiRecordList.Run();
         }
     }
 }
