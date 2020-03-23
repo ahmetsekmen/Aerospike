@@ -19,8 +19,8 @@ namespace AerospikeDemo
 
 
             // Write single value.
-            Key key = new Key("testnamespace", "myset", "mykey");
-            Bin bin = new Bin("mybin", "myvalue");
+            Key key = new Key("test", "SingleSet", "mykey");
+            Bin bin = new Bin("mybin", "myvalue Ahmet Sekmen");
             client.Put(policy, key, bin);
 
 
@@ -43,7 +43,7 @@ namespace AerospikeDemo
 
 
             // Write single value.
-            Key key = new Key("testnamespace", "myset", "mykey");
+            Key key = new Key("test", "myset", "mykey");
             Bin bin = new Bin("mybin", "myvalue");
             client.Put(policy, key, bin);
 

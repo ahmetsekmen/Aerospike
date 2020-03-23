@@ -17,7 +17,7 @@ namespace AerospikeDemo
             WritePolicy policy = new WritePolicy();
             policy.SetTimeout(50);  // 50 millisecond timeout
 
-            Key key = new Key("testnamespacenamespace", "myset", "mykey");
+            Key key = new Key("test", "myset", "mykey");
 
             client.Delete(policy, key);
 

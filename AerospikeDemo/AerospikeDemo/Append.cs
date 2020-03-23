@@ -13,7 +13,7 @@ namespace AerospikeDemo
         {
 			AerospikeClient client = new AerospikeClient("172.28.128.3", 3000);
 
-			Key key = new Key("testnamespace", "myset", "appendkey");
+			Key key = new Key("test", "Append", "appendkey");
 			string binName = "appendbin";
 
 			// Delete record if it already exists.
@@ -35,7 +35,7 @@ namespace AerospikeDemo
 		{
 			AerospikeClient client = new AerospikeClient("172.28.128.3", 3000);
 
-			Key key = new Key("testnamespace", "myset", "prependkey");
+			Key key = new Key("test", "myset", "prependkey");
 			string binName = "prependkey";
 
 			// Delete record if it already exists.

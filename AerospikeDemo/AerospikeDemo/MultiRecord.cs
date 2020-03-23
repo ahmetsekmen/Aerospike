@@ -17,9 +17,10 @@ namespace AerospikeDemo
             policy.SetTimeout(50);  // 50 millisecond timeout
 
 
-            Key key = new Key("testnamespace", "myset", "mykey");
+            Key key = new Key("test", "MultiSet", "mykey");
             Bin bin1 = new Bin("name", "John");
             Bin bin2 = new Bin("age", 25);
+
             client.Put(policy, key, bin1, bin2);
 
 

@@ -9,13 +9,13 @@ namespace AerospikeDemo
             Console.WriteLine("Main!");
             //SingleRecord.Run();
             //MultiRecord.Run();
-            Delete.Run();
+            //Delete.Run();
             //Add.Run();
 
             //Append.RunAppend();
             //Append.RunPrepend();
 
-            //Batch.Run();
+            Batch.Run();
         }
     }
 }

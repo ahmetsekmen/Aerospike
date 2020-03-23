@@ -18,7 +18,7 @@ namespace AerospikeDemo
             policy.SetTimeout(50);  // 50 millisecond timeout
 
 
-			Key key = new Key("testnamespace", "myset", "mykey");
+			Key key = new Key("test", "Add", "mykey");
 			string binName = "addbin";
 
 			// Delete record if it already exists.
@@ -36,7 +36,7 @@ namespace AerospikeDemo
 			//AssertBinEqual(key, record, bin.name, 15);
 			Console.WriteLine(record.GetInt(binName));
 
-			// testnamespace add and get combined.
+			// test add and get combined.
 			bin = new Bin(binName, 30);
 			record = client.Operate(null, key, Operation.Add(bin), Operation.Get(bin.name));
 			Console.WriteLine(record.GetInt(binName));
