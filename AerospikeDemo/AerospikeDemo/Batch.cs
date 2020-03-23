@@ -18,12 +18,12 @@ namespace AerospikeDemo
 		{
 			AerospikeClient client = new AerospikeClient("172.28.128.3", 3000);
 
-			//Key key = new Key("test", "myset", "appendkey");
+			//Key key = new Key("testnamespace", "myset", "appendkey");
 			//client.Delete(null, key);
 
 			for (int i = 1; i <= size; i++)
 			{
-				Key key = new Key("test", "myset", keyPrefix + i);
+				Key key = new Key("testnamespace", "myset", keyPrefix + i);
 				client.Delete(null, key);
 			}
 
@@ -44,7 +44,7 @@ namespace AerospikeDemo
 
 			for (int i = 1; i <= size; i++)
 			{
-				Key key = new Key("test", "myset", keyPrefix + i);
+				Key key = new Key("testnamespace", "myset", keyPrefix + i);
 				Bin bin = new Bin(binName, valuePrefix + i);
 
 				client.Put(policy, key, bin);
@@ -56,7 +56,7 @@ namespace AerospikeDemo
 			Key[] keys = new Key[size];
 			for (int i = 0; i < size; i++)
 			{
-				keys[i] = new Key("test", "myset", keyPrefix + (i + 1));
+				keys[i] = new Key("testnamespace", "myset", keyPrefix + (i + 1));
 			}
 
 			bool[] existsArray = client.Exists(null, keys);
@@ -76,7 +76,7 @@ namespace AerospikeDemo
 			Key[] keys = new Key[size];
 			for (int i = 0; i < size; i++)
 			{
-				keys[i] = new Key("test", "myset", keyPrefix + (i + 1));
+				keys[i] = new Key("testnamespace", "myset", keyPrefix + (i + 1));
 			}
 
 			Record[] records = client.Get(null, keys, binName);
@@ -98,7 +98,7 @@ namespace AerospikeDemo
 			Key[] keys = new Key[size];
 			for (int i = 0; i < size; i++)
 			{
-				keys[i] = new Key("test", "myset", keyPrefix + (i + 1));
+				keys[i] = new Key("testnamespace", "myset", keyPrefix + (i + 1));
 			}
 
 			Record[] records = client.GetHeader(null, keys);
@@ -120,22 +120,22 @@ namespace AerospikeDemo
 		{
 			Console.WriteLine("BatchReadComplex");
 
-			// Batch allows multiple namespaces in one call, but example test environment may only have one namespace.
+			// Batch allows multiple namespaces in one call, but example testnamespace environment may only have one namespace.
 			string[] bins = new string[] { binName };
 			List<BatchRead> records = new List<BatchRead>();
-			records.Add(new BatchRead(new Key("test", "myset", keyPrefix + 1), bins));
-			records.Add(new BatchRead(new Key("test", "myset", keyPrefix + 2), true));
-			records.Add(new BatchRead(new Key("test", "myset", keyPrefix + 3), true));
-			records.Add(new BatchRead(new Key("test", "myset", keyPrefix + 4), false));
-			records.Add(new BatchRead(new Key("test", "myset", keyPrefix + 5), true));
-			records.Add(new BatchRead(new Key("test", "myset", keyPrefix + 6), true));
-			records.Add(new BatchRead(new Key("test", "myset", keyPrefix + 7), bins));
+			records.Add(new BatchRead(new Key("testnamespace", "myset", keyPrefix + 1), bins));
+			records.Add(new BatchRead(new Key("testnamespace", "myset", keyPrefix + 2), true));
+			records.Add(new BatchRead(new Key("testnamespace", "myset", keyPrefix + 3), true));
+			records.Add(new BatchRead(new Key("testnamespace", "myset", keyPrefix + 4), false));
+			records.Add(new BatchRead(new Key("testnamespace", "myset", keyPrefix + 5), true));
+			records.Add(new BatchRead(new Key("testnamespace", "myset", keyPrefix + 6), true));
+			records.Add(new BatchRead(new Key("testnamespace", "myset", keyPrefix + 7), bins));
 
 			// This record should be found, but the requested bin will not be found.
-			records.Add(new BatchRead(new Key("test", "myset", keyPrefix + 8), new string[] { "binnotfound" }));
+			records.Add(new BatchRead(new Key("testnamespace", "myset", keyPrefix + 8), new string[] { "binnotfound" }));
 
 			// This record should not be found.
-			records.Add(new BatchRead(new Key("test", "myset", "keynotfound"), bins));
+			records.Add(new BatchRead(new Key("testnamespace", "myset", "keynotfound"), bins));
 
 			// Execute batch.
 			client.Get(null, records);
