@@ -15,7 +15,8 @@ namespace AerospikeDemo
             //Append.RunAppend();
             //Append.RunPrepend();
 
-            Batch.Run();
+            //Batch.Run();
+            MultiOps.Run();
         }
     }
 }
