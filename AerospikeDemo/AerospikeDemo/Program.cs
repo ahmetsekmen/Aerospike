@@ -18,7 +18,8 @@ namespace AerospikeDemo
             //Batch.Run();
             //MultiOps.Run();
             //QueryTest.RunTest(); 
-            UDFTest.RunTest();
+            //UDFTest.RunTest();
+            UDFTest.WriteListMapUsingUdf();
         }
     }
 }
