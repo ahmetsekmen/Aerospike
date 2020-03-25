@@ -20,11 +20,16 @@ namespace AerospikeDemo
                 string indexName = "queryindexint";
                 string keyPrefix = "querykeyint";
                 string binName = "querybinint";
-                int size = 50;
+                string binName2 = "querybinint2";
+                int size = 10;
 
-                CreateIndex(client, ns, set, indexName, binName);
+                //CreateIndex(client, ns, set, indexName, binName);
                 WriteRecords(client, ns, set, keyPrefix, binName, size);
                 RunQuery(client, ns, set, indexName, binName);
+
+                //CreateIndex(client, ns, set, indexName, binName2);
+                WriteRecords(client, ns, set, keyPrefix, binName2, size);
+                //RunQuery(client, ns, set, indexName, binName2);
             }
             finally
             {

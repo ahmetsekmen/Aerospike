@@ -17,7 +17,8 @@ namespace AerospikeDemo
 
             //Batch.Run();
             //MultiOps.Run();
-            QueryTest.RunTest(); 
+            //QueryTest.RunTest(); 
+            UDFTest.RunTest();
         }
     }
 }
