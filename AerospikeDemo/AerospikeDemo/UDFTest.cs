@@ -64,6 +64,9 @@ namespace AerospikeDemo
         {
 
             AerospikeClient client = new AerospikeClient("172.28.128.3", 3000);
+            ClientPolicy policy1 = new ClientPolicy();
+            policy1.maxConnsPerNode = 1000;
+
 
             try
             {
@@ -79,7 +82,7 @@ namespace AerospikeDemo
                 //inner.Add("Sekmen");
 
                 List<object> PersonInner = new List<object>();
-                for (int i = 0; i < 5; i++)
+                for (int i = 0; i < 99000; i++)
                 {
                     PersonInner.Add(i);
                     PersonInner.Add("Ahmet");
@@ -112,9 +115,16 @@ namespace AerospikeDemo
 
                 string binName = "udfbin5";
 
-                client.Execute(null, key, "example", "writeBin", Value.Get(binName), Value.Get(list));
+                WritePolicy policy = new WritePolicy();
+                policy.SetTimeout(5000);
 
-                IList received = (IList)client.Execute(null, key, "example", "readBin", Value.Get(binName));
+                client.Execute(policy, key, "example", "writeBin", Value.Get(binName), Value.Get(list));
+
+                
+
+                IList received = (IList)client.Execute(policy, key, "example", "readBin", Value.Get(binName));
+                
+
                 //Assert.IsNotNull(received);
 
                 //Assert.AreEqual(list.Count, received.Count);
@@ -125,6 +135,7 @@ namespace AerospikeDemo
                 IDictionary exp = (IDictionary)list[3];
                 IDictionary rec = (IDictionary)received[3];
 
+                
                 //Assert.AreEqual(exp["a"], rec["a"]);
                 //Assert.AreEqual(exp[2L], rec[2L]);
                 //CollectionAssert.AreEqual((IList)exp["list"], (IList)rec["list"]);

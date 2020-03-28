@@ -12,7 +12,7 @@ namespace AerospikeDemo
         private const string keyPrefix = "batchkey";
         private const string valuePrefix = "batchvalue";
         private static readonly string binName = "batchbin";
-        private const int size = 10;
+        private const int size = 6500;
 
         public static void Run()
         {
@@ -20,11 +20,11 @@ namespace AerospikeDemo
 
 
             WriteRecords(client);
-            BatchExists(client);
+            //BatchExists(client);
 
             BatchReads(client);
-            BatchReadHeaders(client);
-            BatchReadComplex(client);
+            //BatchReadHeaders(client);
+            //BatchReadComplex(client);
         }
 
 
@@ -78,8 +78,6 @@ namespace AerospikeDemo
             {
                 Key key = keys[i];
                 Record record = records[i];
-
-                //AssertBinEqual(key, record, binName, valuePrefix + (i + 1));
 
                 Console.WriteLine(record.GetValue(binName));
             }

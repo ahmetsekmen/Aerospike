@@ -5,6 +5,10 @@ VisualStudioVersion = 16.0.29911.84
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AerospikeDemo", "AerospikeDemo\AerospikeDemo.csproj", "{EB80D722-7174-4E31-9BC4-C77E3134C406}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppTutorial", "AppTutorial\AppTutorial.csproj", "{3C4D09C1-A039-49FC-89E8-00CDF84020AF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppTutorialThirparty", "AppTutorialThirparty\AppTutorialThirparty.csproj", "{AB5CB121-A2B2-48D9-AA64-D194CFF787A8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +19,14 @@ Global
 		{EB80D722-7174-4E31-9BC4-C77E3134C406}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EB80D722-7174-4E31-9BC4-C77E3134C406}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EB80D722-7174-4E31-9BC4-C77E3134C406}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3C4D09C1-A039-49FC-89E8-00CDF84020AF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3C4D09C1-A039-49FC-89E8-00CDF84020AF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3C4D09C1-A039-49FC-89E8-00CDF84020AF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3C4D09C1-A039-49FC-89E8-00CDF84020AF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AB5CB121-A2B2-48D9-AA64-D194CFF787A8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AB5CB121-A2B2-48D9-AA64-D194CFF787A8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AB5CB121-A2B2-48D9-AA64-D194CFF787A8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AB5CB121-A2B2-48D9-AA64-D194CFF787A8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

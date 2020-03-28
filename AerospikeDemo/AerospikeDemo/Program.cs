@@ -15,11 +15,11 @@ namespace AerospikeDemo
             //Append.RunAppend();
             //Append.RunPrepend();
 
-            //Batch.Run();
+            Batch.Run();
             //MultiOps.Run();
             //QueryTest.RunTest(); 
             //UDFTest.RunTest();
-            UDFTest.WriteListMapUsingUdf();
+            //UDFTest.WriteListMapUsingUdf();
         }
     }
 }
